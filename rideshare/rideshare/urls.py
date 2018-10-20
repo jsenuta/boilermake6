@@ -36,5 +36,5 @@ urlpatterns = [
     url(r'^home/', views.home),
     url(r'^home/',views.home),
     url(r'^post/',views.ridepost),
-
+]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
