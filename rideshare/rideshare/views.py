@@ -28,4 +28,7 @@ def home(request):
 	return render(request, "home.html", {"request":request})
 def ridepost(request):
     return render(request, "ridepost.html", {"request":request})
+def viewRides(request):
+    return render(request, "viewRides.html", {"request":request})
+
 
