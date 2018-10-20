@@ -29,10 +29,12 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='/catalog/')),
+    path('', RedirectView.as_view(url='/home/')),
     path('catalog/', include('catalog.urls')),
-    url(r'^$',views.singIn),
+    url(r'^$',views.signIn),
 	url(r'^postsign/',views.postsign),
+    url(r'^home/',views.home),
+    url(r'^post/',views.ridepost),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
