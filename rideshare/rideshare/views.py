@@ -1,6 +1,6 @@
 import pyrebase
 from django.shortcuts import render
- 
+
 config = {
     'apiKey': "AIzaSyDI2z3pBo_2Fk4itX3CIg72XX8sMqsqalc",
     'authDomain': "boilermake6-a5da9.firebaseapp.com",
@@ -11,7 +11,7 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
-def singIn(request):
+def signIn(request):
 	return render(request, "signIn.html")
 def postsign(request):
 	email=request.POST.get('email')
@@ -26,5 +26,6 @@ def postsign(request):
 	return render(request, "welcome.html",{"e":email})
 def home(request):
 	return render(request, "home.html", {"request":request})
-
+def ridepost(request):
+    return render(request, "ridepost.html", {"request":request})
 
