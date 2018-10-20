@@ -35,8 +35,4 @@ class Choice(models.Model):
 #form = PostForm()
 #article = Article.objects.get(pk=1)
 #form = PostForm(instance=article)"""
-<<<<<<< HEAD
-=======
 
-
->>>>>>> a675beec3e9a08b052cce6eba213337c5326fc02
