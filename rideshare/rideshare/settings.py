@@ -54,7 +54,7 @@ ROOT_URLCONF = 'rideshare.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['/Users/isha/BoilerMake2018/boilermake6/rideshare/rideshare/templates', 'templates', 'rideshare/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
