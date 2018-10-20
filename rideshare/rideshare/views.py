@@ -26,3 +26,5 @@ def postsign(request):
 	return render(request, "welcome.html",{"e":email})
 def home(request):
 	return render(request, "home.html", {"request":request})
+
+

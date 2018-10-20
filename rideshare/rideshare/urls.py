@@ -33,7 +33,7 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     url(r'^$',views.singIn),
 	url(r'^postsign/',views.postsign),
-    url(r'^home/', views.home)
+    url(r'^home/', views.home),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
