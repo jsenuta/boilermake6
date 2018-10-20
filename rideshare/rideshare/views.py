@@ -20,6 +20,9 @@ def postsign(request):
 		user = auth.sign_in_with_email_and_password(email,passw)
 	except:
 		message = "invalid cerediantials"
+
 	return render(request,"signIn.html",{"msg":message})
 	print(user)
 	return render(request, "welcome.html",{"e":email})
+def home(request):
+	return render(request, "home.html", {"request":request})
