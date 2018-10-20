@@ -1,5 +1,6 @@
 #import pyrebase
 from django.shortcuts import render
+from .forms import PostForm
 
 config = {
     'apiKey': "AIzaSyDI2z3pBo_2Fk4itX3CIg72XX8sMqsqalc",
@@ -30,5 +31,10 @@ def ridepost(request):
     return render(request, "ridepost.html", {"request":request})
 def viewRides(request):
     return render(request, "viewRides.html", {"request":request})
+def post_list(request):
+	return render(request, 'post_list.html')
+def post_new(request):
+    form = PostForm()
+    return render(request, 'post_edit.html', {'form': form})
 
 
