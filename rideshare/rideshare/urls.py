@@ -33,7 +33,6 @@ urlpatterns = [
     #path('catalog/', include('catalog.urls')),
     url(r'^$',views.signIn),
     url(r'^postsign/',views.postsign),
-    url(r'^home/', views.home),
     url(r'^home/',views.home),
     url(r'^post/',views.ridepost),
 ]
