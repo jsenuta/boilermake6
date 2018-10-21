@@ -46,6 +46,18 @@
 			right: 200px;
 			bottom: -500px;
  	}
+	h1
+	{
+		font-size:18px;
+		color: white;
+		font:arial;
+	}
+	h2
+	{
+		font-size:16px;
+		color: white;
+		font:arial;
+	}
 
 </style>
 <body>
@@ -53,16 +65,25 @@
 	<font face = "Impact" font size = "30" color = "white"> Rideshare  </font>
 	{% block content %}
 	{% if user.is_authenticated %}
-		 Hi {{ user.username }}! 
-		 <p><a href="{% url 'logout' %}">logout</a></p>
+		 <h1>Hi {{ user.username }}!</h1>
+		 <a href="{% url 'logout' %}">
+			 <button>Logout</button>
+		 </a>
 	{% else %}
-		<p>You are not logged in</p>
-		<a href="{% url 'login' %}">login</a>
-		<a href="/accounts/signUp">sign up</a>
+		<h1><p>You are not logged in!</p></h1>
+
+	<a href="/accounts/login">
+		<button>Login</button>
+	</a>
+  <h2> or </h2>
+	<a href="/accounts/signup">
+		<button>Sign Up</button>
+	</a>
+
 {% endif %}
 {% endblock %}
 </center>
-	<a href="/viewRides">
+	<a href="/listings">
 	<button class="button"  >View Rides</button>
 	</a>
 

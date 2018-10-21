@@ -11,10 +11,11 @@ class Post(models.Model):
 	date_ride = models.DateTimeField(blank=True, null=True)
 	published_date = models.DateTimeField(blank=True, null=True, auto_now=True)
 	
+
 	def publish(self):
 		self.published_date = timezone.now()
 		self.save()
-	
+
 	def __str__(self):
 		return self.startLoc
 
@@ -35,4 +36,3 @@ class Choice(models.Model):
 #form = PostForm()
 #article = Article.objects.get(pk=1)
 #form = PostForm(instance=article)"""
-

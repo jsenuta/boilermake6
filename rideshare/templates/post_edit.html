@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>New post</h1>
+
+<style>
+	body
+	{
+		background-color:#009FB9;
+		background-size: 100%;
+	}
+	h1
+	{
+		font-size: 30;
+		color:  #FFFECA;
+		margin:0;
+		padding:0;
+		text-align: center;
+		font-family:"arial";
+		position: absolute;
+		top: -30%;
+		left: 9%;
+		transform: translateX(-50%);
+	}
+</style>
+    <h1>Post your ride</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <a href="/listings" <button type="submit" class="save btn btn-default">Save</button> </a>
     </form>
 {% endblock %}
