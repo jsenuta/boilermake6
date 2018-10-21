@@ -4,7 +4,29 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
+
+<style>
+	body
+	{
+		background-color:#009FB9;
+		background-size: 100%;
+	}
+	h1
+	{
+		font-size: 30;
+		color:  #FFFECA;
+		margin:0;
+		padding:0;
+		text-align: center;
+		font-family:"arial";
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+</style>
+
+  <h2>Purdue students sign up here!</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
