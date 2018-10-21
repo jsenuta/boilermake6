@@ -1,11 +1,11 @@
 <div>
-    <h1><a href="/">Available Posts</a></h1>
+    <h1><a href="/">Return to home page</a></h1>
 </div>
 
-{% for post in posts %}
+{% for post in Post %}
     <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.startLoc }}</a></h1>
-        <p>{{ post.endLoc|linebreaksbr }}</p>
+        <p>published: {{ Post.published_date }}</p>
+        <h1><a href="">{{ Post.startLoc }}</a></h1>
+        <p>{{ Post.endLoc|linebreaksbr }}</p>
     </div>
 {% endfor %}
