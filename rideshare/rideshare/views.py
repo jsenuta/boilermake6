@@ -35,8 +35,8 @@ def ridepost(request):
 def viewRides(request):
     return render(request, "viewRides.html", {"request":request})
 def post_list(request):
-	posts = Post.objects.order('published_date')
-	#posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	#posts = Post.objects.order('published_date')
+	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'post_list.html', {'posts': posts})
 def post_new(request):
     if request.method == "POST":
@@ -46,7 +46,7 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.publish()
-            return render(request, 'post_list.html')
+            return redirect('/listings/')
     else:
         form = PostForm()
     return render(request, 'post_edit.html', {'form': form})
