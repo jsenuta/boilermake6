@@ -34,11 +34,9 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/home/')),
 	path('listings/',views.post_list, name='post_list'),  #new
 	path('post/', views.post_new, name='post_new'), #new
-    #path('catalog/', include('catalog.urls')),
     url(r'^$',views.signIn),
     url(r'^postsign/',views.postsign),
     url(r'^home/',views.home),
-    #url(r'^post/',views.ridepost),
     url(r'^viewRides/', views.viewRides)
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
