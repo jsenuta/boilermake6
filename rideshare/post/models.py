@@ -18,20 +18,3 @@ class Post(models.Model):
 	def __str__(self):
 		return self.startLoc
 
-class Choice(models.Model):
-	name = models.CharField(max_length=30)
-
-	def __str__(self):
-		return self.name
-
-"""class PostForm(ModelForm):
-	class Meta:
-		model = Article
-		fields = ['pub_date', 'ride_date', 'content', 'start', 'end']
-
-	def publish(self):
-		self.pub_date = timezone.now()
-		self.save()
-#form = PostForm()
-#article = Article.objects.get(pk=1)
-#form = PostForm(instance=article)"""
