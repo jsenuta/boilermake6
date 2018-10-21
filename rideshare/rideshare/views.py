@@ -20,24 +20,23 @@ def signIn(request):
 def postsign(request):
 	email=request.POST.get('email')
 	passw = request.POST.get("pass")
-	#try:
-	#	user = auth.sign_in_with_email_and_password(email,passw)
-	#except:
-	#	message = "invalid cerediantials"
-
 	return render(request,"signIn.html",{"msg":message})
 	print(user)
 	return render(request, "welcome.html",{"e":email})
+	
 def home(request):
 	return render(request, "home.html", {"request":request})
+	
 def ridepost(request):
     return render(request, "ridepost.html", {"request":request})
+	
 def viewRides(request):
     return render(request, "viewRides.html", {"request":request})
+	
 def post_list(request):
-	#posts = Post.objects.order('published_date')
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'post_list.html', {'posts': posts})
+	
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
