@@ -30,7 +30,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/home/')),
-	#path('post/',views.post_list, name='post_list'),  #new
+	path('listings/',views.post_list, name='post_list'),  #new
 	path('post/', views.post_new, name='post_new'), #new
     #path('catalog/', include('catalog.urls')),
     url(r'^$',views.signIn),

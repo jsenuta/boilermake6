@@ -1,0 +1,11 @@
+<div>
+    <h1><a href="/">Available Posts</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.startLoc }}</a></h1>
+        <p>{{ post.endLoc|linebreaksbr }}</p>
+    </div>
+{% endfor %}
