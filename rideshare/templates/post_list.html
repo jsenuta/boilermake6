@@ -1,17 +1,60 @@
 <html>
+<style>
+body
+{
+    background-color:#009FB9;
+}
+h1
+{
+  font-size: 30;
+  color: #FFFECA;
+  margin:0;
+  padding:0;
+  font-family:"arial";
+  position: absolute;
+  top: 0%;
+  left: 9%;
+  transform: translateX(-50%);
+}
+h2
+{
+  font-size: 15;
+  color: white;
+  font-family:"arial";
+  position: relative;
+}
+</style>
 	<head>
 		<title>Available Posts</title>
-	<div>
-		<h1><a href="/">Available Posts</a></h1>
-	</div>
+    <h1> Available rides </h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Number of Seats</th>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+    <tr>
+      <th scope="row"></th>
+      <td>{{post.date_ride}}</td>
+      <td> {{post.startLoc}}</td>
+      <td>{{post.endLoc|linebreaksbr}}</td>
+      <td>{{post.seats}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+    <div>
+      <a href="/">Return to home page</a>
+    </div>
 
-	{% for post in posts %}
-		<div>
-			<p>published: {{ post.published_date }}</p>
-			<h1><a href="">{{ post.startLoc }}</a></h1>
-			<p>{{ post.endLoc|linebreaksbr }}</p>
-		</div>
-	{% endfor %}
+  </tbody>
+
+
+
+
 
 </html>
-

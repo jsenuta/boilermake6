@@ -51,6 +51,16 @@
 <body>
 <center>
 	<font face = "Impact" font size = "30" color = "white"> Rideshare  </font>
+	{% block content %}
+	{% if user.is_authenticated %}
+		 Hi {{ user.username }}! 
+		 <p><a href="{% url 'logout' %}">logout</a></p>
+	{% else %}
+		<p>You are not logged in</p>
+		<a href="{% url 'login' %}">login</a>
+		<a href="/accounts/signUp">sign up</a>
+{% endif %}
+{% endblock %}
 </center>
 	<a href="/viewRides">
 	<button class="button"  >View Rides</button>

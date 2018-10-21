@@ -29,6 +29,8 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+	path('accounts/', include('accounts.urls')),
+	path('accounts/', include('django.contrib.auth.urls')),
     path('', RedirectView.as_view(url='/home/')),
 	path('listings/',views.post_list, name='post_list'),  #new
 	path('post/', views.post_new, name='post_new'), #new
