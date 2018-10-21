@@ -25,6 +25,6 @@
     <h1>Post your ride</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <a href="/listings" <button type="submit" class="save btn btn-default">Save</button> </a>
+        <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}
