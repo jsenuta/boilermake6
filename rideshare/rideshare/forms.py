@@ -6,4 +6,4 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('startLoc','endLoc','seats')
+        fields = ('startLoc','endLoc','seats','date_ride')
