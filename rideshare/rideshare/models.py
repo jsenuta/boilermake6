@@ -9,7 +9,7 @@ class Post(models.Model):
 	startLoc = models.CharField(max_length=100)
 	endLoc = models.CharField(max_length=100)
 	date_ride = models.DateTimeField(blank=True, null=True)
-	published_date = models.DateTimeField(blank=True, null=True)
+	published_date = models.DateTimeField(blank=True, null=True, auto_now=True)
 	
 	def publish(self):
 		self.published_date = timezone.now()
