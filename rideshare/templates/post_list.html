@@ -47,7 +47,8 @@ h2
   <table class="table table-striped">
     <thead>
       <tr>
-      <th scope="col">Date</th>
+      <th scope="col"></th>
+	  <th scope='col'>User</th>
       <th scope="col">Time</th>
       <th scope="col">Origin</th>
       <th scope="col">Destination</th>
@@ -57,6 +58,7 @@ h2
     {% for post in posts %}
     <tr>
       <th scope="row"></th>
+	  <td>{{post.author}}</td>
       <td>{{post.date_ride}}</td>
       <td> {{post.startLoc}}</td>
       <td>{{post.endLoc|linebreaksbr}}</td>
