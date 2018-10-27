@@ -1,75 +1,137 @@
 <html>
 <style>
-body
-{
-    background-color:#009FB9;
-    background-size: 100%;
+
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
 }
 table{
-  width:800px;
-  margin:auto;
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+
+
+/* follow me template */
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
   text-align: center;
-  margin-top: 8%;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
 }
-table, tr, th, td{
-  padding:20px;
-  color:white;
-  border:1px solid #FFFECA;
-  border-collapse:collapse;
-  font-sie:18px;
-  font-family:Arial;
-  background:linear-gradient(top, #3c3c3c 0%, #222222);
-  background:-webkit-linear-gradient(top, #3c3c3c 0%, #222222);
-}
-h1
-{
-  font-size: 30;
-  color: #FFFECA;
-  margin:0;
-  padding:0;
-  font-family:"arial";
-  position: absolute;
-  top: 0%;
-  left: 9%;
-  transform: translateX(-50%);
-}
-h2
-{
-  font-size: 15;
-  color: white;
-  font-family:"arial";
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
   position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
 }
 </style>
+
 	<head>
 		<title>Available Posts</title>
     <h1> Available rides </h1>
-  <table class="table table-striped">
-    <thead>
+  </head>
+  <body>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Origin</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Number of Seats</th>
+      </thead>
+      <tbody>
+      {% for post in posts %}
       <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Time</th>
-      <th scope="col">Origin</th>
-      <th scope="col">Destination</th>
-      <th scope="col">Number of Seats</th>
-    </thead>
-    <tbody>
-    {% for post in posts %}
-    <tr>
-      <th scope="row"></th>
-      <td>{{post.date_ride}}</td>
-      <td> {{post.startLoc}}</td>
-      <td>{{post.endLoc|linebreaksbr}}</td>
-      <td>{{post.seats}}</td>
-    </tr>
-    {% endfor %}
-  </table>
+        <th scope="row"></th>
+        <td>{{post.date_ride}}</td>
+        <td> {{post.startLoc}}</td>
+        <td>{{post.endLoc|linebreaksbr}}</td>
+        <td>{{post.seats}}</td>
+      </tr>
+      {% endfor %}
+    </table>
     <div>
       <a href="/">Return to home page</a>
     </div>
 
-  </tbody>
+    </tbody>
+  </body>
+<script type="text/javascript">
+  window.onscroll = function(){scrollFunction()};
 
+  function myFunction(){
+      
+  }
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
 
 
 
