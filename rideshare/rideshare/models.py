@@ -4,11 +4,11 @@ from django.forms import ModelForm
 from django.utils import timezone
 
 class Post(models.Model):
-	author = models.CharField(max_length=100)
+	author = models.CharField(max_length=100, default = "admin")
 	seats = models.IntegerField(default=1)
-	startLoc = models.CharField(max_length=100)
-	endLoc = models.CharField(max_length=100)
-	date_ride = models.DateTimeField(blank=True, null=True)
+	startLoc = models.CharField(max_length=100, default = "Purdue")
+	endLoc = models.CharField(max_length=100, default = "IND")
+	date_ride = models.DateTimeField(default = timezone.now)
 	published_date = models.DateTimeField(blank=True, null=True, auto_now=True)
 	
 

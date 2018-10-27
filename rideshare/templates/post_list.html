@@ -107,6 +107,7 @@ section{
       <tbody>
       {% for post in posts %}
       <tr>
+<<<<<<< HEAD
         <th scope="row"></th>
         <td>{{post.date_ride}}</td>
         <td> {{post.startLoc}}</td>
@@ -115,6 +116,27 @@ section{
       </tr>
       {% endfor %}
     </table>
+=======
+      <th scope="col"></th>
+	  <th scope='col'>User</th>
+      <th scope="col">Time</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Number of Seats</th>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+    <tr>
+      <th scope="row"></th>
+	  <td>{{post.author}}</td>
+      <td>{{post.date_ride}}</td>
+      <td> {{post.startLoc}}</td>
+      <td>{{post.endLoc|linebreaksbr}}</td>
+      <td>{{post.seats}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+>>>>>>> f998b996510e5f4a31e0e91f28874c9690b65e36
     <div>
       <a href="/">Return to home page</a>
     </div>
