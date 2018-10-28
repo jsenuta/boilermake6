@@ -35,8 +35,10 @@ def viewRides(request):
     return render(request, "viewRides.html", {"request":request})
 
 def post_list(request):
-	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-	return render(request, 'post_list.html', {'posts': posts})
+        if ( not (request.user.is_authenticated())):
+                return render(request, "signIn.html")
+        posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+        return render(request, 'post_list.html', {'posts': posts})
 
 def post_new(request):
     if request.method == "POST":
